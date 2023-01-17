@@ -13,7 +13,7 @@ export const useAddToken = () => {
   const addToken = useMemo(
     () =>
       // Can only add tokens on mainnet.
-      CHAIN_ID === ChainInfoID.Athena1
+      CHAIN_ID === ChainInfoID.Terpnet1
         ? async (address: string) => {
             const keplr = await getKeplrFromWindow()
             if (keplr && (await suggestToken(keplr, address))) {
