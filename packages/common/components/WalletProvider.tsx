@@ -1,24 +1,3 @@
-
-DA0-DA0
-/
-dao-dao-ui
-Public
-Code
-Issues
-29
-Pull requests
-4
-Discussions
-Actions
-Projects
-Wiki
-Security
-Insights
-dao-dao-ui/packages/stateful/components/WalletProvider.tsx
-@NoahSaso
-NoahSaso Made wallet modal match v2 modal.
- 1 contributor
-118 lines (110 sloc)  3.87 KB
 import { GasPrice } from '@cosmjs/stargate'
 import {
   ChainInfoID,
