@@ -1,4 +1,4 @@
-Loimport { getKeplrFromWindow } from '@keplr-wallet/stores'
+import { getKeplrFromWindow } from '@keplr-wallet/stores'
 import { ChainInfoID } from '@xiti/cosmodal'
 import { useMemo } from 'react'
 import toast from 'react-hot-toast'
