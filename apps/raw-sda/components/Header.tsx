@@ -3,7 +3,7 @@ import {
   IWalletManagerContext,
   WalletConnectionStatus,
   useWalletManager,
-} from '@noahsaso/cosmodal'
+} from '@xiti/cosmodal'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

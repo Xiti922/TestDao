@@ -1,6 +1,6 @@
 # @dao-dao/proposal-module-adapter
 
-Author: [@NoahSaso](https://github.com/NoahSaso)
+Author: [@xiti](https://github.com/NoahSaso)
 
 ## What is it?
 

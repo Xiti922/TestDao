@@ -1,4 +1,4 @@
-import { useWalletManager } from '@noahsaso/cosmodal'
+import { useWalletManager } from '@xiti/cosmodal'
 import { isMobile } from '@walletconnect/browser-utils'
 import clsx from 'clsx'
 

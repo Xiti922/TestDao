@@ -1,4 +1,4 @@
-import { useWalletManager } from '@noahsaso/cosmodal'
+import { useWalletManager } from '@xiti/cosmodal'
 import { useTranslation } from 'react-i18next'
 
 import { Button, ClaimsListItem } from '@dao-dao/ui'

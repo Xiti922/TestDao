@@ -4,7 +4,7 @@ import {
   IWalletManagerContext,
   WalletConnectionStatus,
   useWalletManager,
-} from '@noahsaso/cosmodal'
+} from '@xiti/cosmodal'
 import clsx from 'clsx'
 import { ComponentType, Dispatch, SVGProps, SetStateAction } from 'react'
 import { useTranslation } from 'react-i18next'

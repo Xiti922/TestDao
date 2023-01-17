@@ -1,4 +1,4 @@
-import { useWallet } from '@noahsaso/cosmodal'
+import { useWallet } from '@xiti/cosmodal'
 import { constSelector, useRecoilValue } from 'recoil'
 
 import { CwCoreV0_1_0Selectors } from '../recoil/selectors'

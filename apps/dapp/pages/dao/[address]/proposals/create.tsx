@@ -2,7 +2,7 @@
 // See the "LICENSE" file in the root directory of this package for more copyright information.
 
 import { InformationCircleIcon } from '@heroicons/react/outline'
-import { useWallet } from '@noahsaso/cosmodal'
+import { useWallet } from '@xiti/cosmodal'
 import type { GetStaticPaths, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo, useState } from 'react'
