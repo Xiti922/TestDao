@@ -29,7 +29,7 @@ export const ConnectWalletButton = ({
   } = useWalletManager()
   const { walletBalance } = useWalletBalance()
 
-  if (mobile && isMobile() && CHAIN_ID !== 'juno-1') {
+  if (mobile && isMobile() && CHAIN_ID !== 'athena-3') {
     return <NoMobileWallet />
   }
 
