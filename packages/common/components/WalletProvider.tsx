@@ -5,7 +5,7 @@ import {
   WalletManagerProvider,
   WalletType,
   useWallet,
-} from '@noahsaso/cosmodal'
+} from '@xiti/cosmodal'
 import { isMobile } from '@walletconnect/browser-utils'
 import { ComponentType, PropsWithChildren, ReactNode, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -66,7 +66,7 @@ export const WalletProvider = ({
       enabledWalletTypes={[
         WalletType.Keplr,
         // Only allow WalletConnect on mainnet.
-        ...(CHAIN_ID === ChainInfoID.Athena1
+        ...(CHAIN_ID === ChainInfoID.Terpnet1
           ? [WalletType.WalletConnectKeplr]
           : []),
       ]}
