@@ -7,19 +7,17 @@ import {
   useWallet,
 } from '@xiti/cosmodal'
 import { isMobile } from '@walletconnect/browser-utils'
-import { PropsWithChildren, ReactNode, useEffect } from 'react'
+import { ComponentType, PropsWithChildren, ReactNode, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSetRecoilState } from 'recoil'
 
 import { signingCosmWasmClientAtom } from '@dao-dao/state'
-import { Loader } from '@dao-dao/stateless'
+import { Loader as DefaultLoader, LoaderProps } from '@dao-dao/ui'
 import {
   CHAIN_ID,
   CHAIN_REST_ENDPOINT,
   CHAIN_RPC_ENDPOINT,
   SITE_URL,
-  STARGAZE_REST_ENDPOINT,
-  STARGAZE_RPC_ENDPOINT,
   WC_ICON_PATH,
 } from '@dao-dao/utils'
 
@@ -30,9 +28,13 @@ if (!(Object.values(ChainInfoID) as string[]).includes(CHAIN_ID)) {
 
 export interface WalletProviderProps {
   children: ReactNode
+  Loader?: ComponentType<LoaderProps>
 }
 
-export const WalletProvider = ({ children }: WalletProviderProps) => {
+export const WalletProvider = ({
+  Loader = DefaultLoader,
+  children,
+}: WalletProviderProps) => {
   const { t } = useTranslation()
 
   return (
@@ -45,26 +47,20 @@ export const WalletProvider = ({ children }: WalletProviderProps) => {
           rpc: CHAIN_RPC_ENDPOINT,
           rest: CHAIN_REST_ENDPOINT,
         },
-        {
-          ...ChainInfoMap[ChainInfoID.Stargaze1],
-          rpc: STARGAZE_RPC_ENDPOINT,
-          rest: STARGAZE_REST_ENDPOINT,
-        },
       ]}
       classNames={{
         modalOverlay: '!backdrop-brightness-50 !backdrop-filter',
         modalContent:
-          '!p-6 !max-w-md !bg-background-base !rounded-lg !border !border-border-secondary !shadow-dp8',
+          '!p-6 !max-w-md !bg-white !rounded-lg !border !border-focus',
         modalCloseButton:
-          '!p-1 !text-icon-tertiary bg-transparent hover:!bg-background-interactive-hover active:!bg-background-interactive-pressed !rounded-full !transition !absolute !top-2 !right-2',
+          '!p-1 hover:!bg-secondary !rounded-full !transition !absolute !top-2 !right-2 ',
         modalHeader: '!header-text',
         modalSubheader: '!title-text',
-        wallet:
-          '!rounded-lg !bg-background-secondary !p-4 !shadow-none transition-opacity opacity-100 hover:opacity-80 active:opacity-70',
+        wallet: '!rounded-lg !bg-card !p-4 !shadow-none',
         walletImage: '!rounded-full',
         walletName: '!primary-text',
         walletDescription: '!caption-text',
-        textContent: '!body-text',
+        textContent: '!primary-text',
       }}
       defaultChainId={CHAIN_ID}
       enabledWalletTypes={[
@@ -89,7 +85,7 @@ export const WalletProvider = ({ children }: WalletProviderProps) => {
         // If on a mobile device, default to WalletConnect.
         isMobile() ? WalletType.WalletConnectKeplr : undefined
       }
-      renderLoader={() => <Loader size={42} />}
+      renderLoader={() => <Loader size={64} />}
       walletConnectClientMeta={{
         name: t('meta.title'),
         description: t('meta.description'),
